@@ -9,20 +9,13 @@
 buildscript {
     repositories {
         mavenLocal()
-        maven {
-            url System.getProperty('artifactoryDefaultUrl')
-            credentials {
-                username = System.getProperty('artifactoryUsername')
-                password = System.getProperty('artifactoryPassword')
-            }
-        }
+        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.adias.gradle:adias-gradle-plugins:1.4.0'
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
     }
 }
-apply plugin: 'com.adias.gradle.java-app'
 
 apply plugin: 'java'
 apply plugin: 'idea'
